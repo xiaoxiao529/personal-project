@@ -1,0 +1,900 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>英雄觉醒</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script>
+        document.domain = "7fgame.com";
+    </script>
+</head>
+<body onkeydown="return false;">
+
+    <div class="hero-awakening">
+        <div class="page-back"><a href="javascript:history.go(-1);">返回</a></div>
+        <canvas id="canvas">
+            <p>抱歉，您的浏览器不支持canvas</p>
+        </canvas>
+
+        <canvas id="canvasLine">
+            <p>抱歉，您的浏览器不支持canvas</p>
+        </canvas>
+
+        <div class="outer-panel-bg"></div>
+        <div class="outer-panel-circle"></div>
+        <div class="outer-panel-dot"></div>
+        <div class="inner-hero-pic"><img id="heropic" src="" width="270"></div>
+
+        <div class="awark-btn01">
+            <a href="javascript:;" id="btn1"></a>
+            <p class="awark-btn-icon iconlhsp"><img src="picture/ico03.png"><span class="usenum1">0</span></p>
+            <div class="icon-tips" style="display: none;">
+                <p>灵魂碎片：用于觉醒属性</p>
+            </div>
+        </div>
+
+        <div class="awark-btn02">
+            <a href="javascript:;" id="btn2"></a>
+            <p class="awark-btn-icon"><img src="picture/ico02.png" class="icon02"><span>1</span> <span> 或 </span> <img src="picture/ico01.png" class="icon03"><span>1</span></p>
+            <div class="icon-tips02" style="display: none;">
+                <p>灵魂结晶：用于高级觉醒，能够指定一条7级以下的属性进行觉醒</p>
+            </div>
+            <div class="icon-tips03" style="display: none;">
+                <p>灵魂精粹：用于高级觉醒，能够指定一条属性进行觉醒</p>
+            </div>
+        </div>
+        <div class="awark-btn02 off-btn02" style="display:none;">
+            <a href="javascript:;" id="btn3"></a>
+            <p class="awark-btn-icon"><img src="picture/ico02.png" class="icon02"><span>1</span> <span> 或 </span> <img src="picture/ico01.png" class="icon03"><span>1</span></p>
+            <div class="icon-tips02" style="display: none;">
+                <p>灵魂结晶：用于高级觉醒，能够指定一条7级以下的属性进行觉醒</p>
+            </div>
+            <div class="icon-tips03" style="display: none;">
+                <p>灵魂精粹：用于高级觉醒，能够指定一条属性进行觉醒</p>
+            </div>
+        </div>
+
+        <div class="icon-box">
+            <div class="icon-list">
+                <div class="icon-num">
+                    <img src="picture/ico03.png">
+                    <span class="itemnum1">0</span>
+                </div>
+                <div class="icon-tips" style="display: none;">
+                    <p>灵魂碎片：用于觉醒属性</p>
+                </div>
+            </div>
+            <div class="icon-list">
+                <div class="icon-num">
+                    <img src="picture/ico02.png">
+                    <span class="itemnum2">0</span>
+                </div>
+                <div class="icon-tips" style="display: none;">
+                    <p>灵魂结晶：用于高级觉醒，能够指定一条7级以下的属性进行觉醒</p>
+                </div>
+            </div>
+            <div class="icon-list">
+                <div class="icon-num">
+                    <img src="picture/ico01.png">
+                    <span class="itemnum3">0</span>
+                </div>
+                <div class="icon-tips" style="display: none;">
+                    <p>灵魂精粹：用于高级觉醒，能够指定一条属性进行觉醒</p>
+                </div>
+            </div>
+            <div class="awaken-tips">
+                <a href="javascript:;">觉醒说明</a>
+                <a href="javascript:;">觉醒图鉴</a>
+            </div>
+        </div>
+        <!--底部灰态图标-->
+        <div class="gray-pic">
+            <img src="picture/1.png" alt="" class="gray-pic01" />
+            <img src="picture/2.png" alt="" class="gray-pic02" />
+            <img src="picture/3.png" alt="" class="gray-pic03" />
+            <img src="picture/4.png" alt="" class="gray-pic04" />
+            <img src="picture/5.png" alt="" class="gray-pic05" />
+            <img src="picture/6.png" alt="" class="gray-pic06" />
+            <img src="picture/7.png" alt="" class="gray-pic07" />
+            <img src="picture/8.png" alt="" class="gray-pic08" />
+            <img src="picture/9.png" alt="" class="gray-pic09" />
+            <img src="picture/13.png" alt="" class="gray-pic13" />
+            <img src="picture/14.png" alt="" class="gray-pic14" />
+            <img src="picture/15.png" alt="" class="gray-pic15" />
+            <img src="picture/16.png" alt="" class="gray-pic16" />
+            <img src="picture/17.png" alt="" class="gray-pic17" />
+            <img src="picture/18.png" alt="" class="gray-pic18" />
+            <img src="picture/19.png" alt="" class="gray-pic19" />
+            <img src="picture/20.png" alt="" class="gray-pic20" />
+        </div>
+
+
+
+        <!--移到背景改变-->
+        <div class="changeBg">
+            <a class="a1" href="javascript:;"></a>
+            <a class="a2" href="javascript:;"></a>
+            <a class="a3" href="javascript:;"></a>
+            <a class="a4" href="javascript:;"></a>
+            <a class="a5" href="javascript:;"></a>
+            <a class="a6" href="javascript:;"></a>
+            <a class="a7" href="javascript:;"></a>
+            <a class="a8" href="javascript:;"></a>
+            <a class="a9" href="javascript:;"></a>
+            <a class="a10" href="javascript:;"></a>
+            <a class="a11" href="javascript:;"></a>
+            <a class="a12" href="javascript:;"></a>
+            <a class="a13" href="javascript:;"></a>
+            <a class="a14" href="javascript:;"></a>
+            <a class="a15" href="javascript:;"></a>
+            <a class="a16" href="javascript:;"></a>
+            <a class="a17" href="javascript:;"></a>
+            <a class="a18" href="javascript:;"></a>
+            <a class="a19" href="javascript:;"></a>
+            <a class="a20" href="javascript:;"></a>
+        </div>
+
+        <!--白色高亮文字-->
+        <div class="lightZ">
+            <a href="javascript:;" class="z1"></a>
+            <a href="javascript:;" class="z2"></a>
+            <a href="javascript:;" class="z3"></a>
+            <a href="javascript:;" class="z4"></a>
+            <a href="javascript:;" class="z5"></a>
+            <a href="javascript:;" class="z6"></a>
+            <a href="javascript:;" class="z7"></a>
+            <a href="javascript:;" class="z8"></a>
+            <a href="javascript:;" class="z9"></a>
+            <a href="javascript:;" class="z10"></a>
+            <a href="javascript:;" class="z11"></a>
+            <a href="javascript:;" class="z12"></a>
+            <a href="javascript:;" class="z13"></a>
+            <a href="javascript:;" class="z14"></a>
+            <a href="javascript:;" class="z15"></a>
+            <a href="javascript:;" class="z16"></a>
+            <a href="javascript:;" class="z17"></a>
+            <a href="javascript:;" class="z18"></a>
+            <a href="javascript:;" class="z19"></a>
+            <a href="javascript:;" class="z20"></a>
+        </div>
+
+        <div class="map_hot">
+            <img src="picture/awak-panel1empty.png" width="721" height="659" border="0" usemap="#Map" />
+            <map name="Map" id="Map">
+                <area id="area201" shape="poly" coords="362,83,433,100,420,142,362,136" href="#" />
+                <area id="area202" shape="poly" coords="435,101,422,141,478,166,506,129" href="#" />
+                <area id="area203" shape="poly" coords="507,130,479,165,520,214,559,184" href="#" />
+                <area id="area204" shape="poly" coords="562,184,520,213,550,269,593,254" href="#" />
+                <area id="area205" shape="poly" coords="551,269,563,330,608,331,593,252" href="#" />
+                <area id="area206" shape="poly" coords="566,330,607,330,596,407,560,392" href="#" />
+                <area id="area207" shape="poly" coords="557,391,522,446,565,475,596,408" href="#" />
+                <area id="area208" shape="poly" coords="522,449,478,489,509,533,567,474" href="#" />
+                <area id="area209" shape="poly" coords="477,489,425,513,441,569,508,530" href="#" />
+                <area id="area210" shape="poly" coords="420,513,439,569,362,580,360,523" href="#" />
+                <area id="area110" shape="poly" coords="282,571,301,515,360,524,363,580" href="#" />
+                <area id="area109" shape="poly" coords="246,489,215,531,282,568,300,515" href="#" />
+                <area id="area108" shape="poly" coords="248,489,213,527,161,475,204,444" href="#" />
+                <area id="area107" shape="poly" coords="206,443,162,472,126,407,179,390" href="#" />
+                <area id="area106" shape="poly" coords="129,404,177,388,167,328,111,329" href="#" />
+                <area id="area105" shape="poly" coords="178,272,168,327,114,328,125,254" href="#" />
+                <area id="area104" shape="poly" coords="162,184,207,217,179,271,126,254" href="#" />
+                <area id="area103" shape="poly" coords="166,184,209,216,249,175,219,131" href="#" />
+                <area id="area102" shape="poly" coords="249,176,302,148,286,96,223,129" href="#" />
+                <area id="area101" shape="poly" coords="302,145,361,136,361,85,287,95" href="#" />
+            </map>
+        </div>
+
+        <div class="mask1"></div>
+        <div class="mask"></div>
+        <!--确定觉醒成功弹框-->
+        <div class="alert_box" id="alertbox">
+            <div class="close">
+                <a href="javascript:closeBox();"><img src="picture/close.png" /></a>
+            </div>
+            <div class="alert-info">
+                <p id="msg11">觉醒成功:</p>
+                <p id="msg1"></p>
+            </div>
+            <p class="alert-btn">
+                <a href="javascript:closeBox();"><img src="picture/btn01.png" /></a>
+            </p>
+        </div>
+        <!--确定是否觉醒弹框-->
+        <div class="alert_box" id="confirbox">
+            <div class="close">
+                <a href="javascript:cancelbox();"><img src="picture/close.png" /></a>
+            </div>
+            <div class="alert-info">
+                <p id="msg2"></p>
+            </div>
+            <p class="alert-btn">
+                <a href="javascript:gjjx();"><img src="picture/btn01.png" /></a>
+                <a href="javascript:cancelbox();"><img src="picture/btn02.png" /></a>
+            </p>
+        </div>
+
+
+        <!--技能提示-->
+        <div class="skill-tips">
+        </div>
+
+
+        <!--水波纹效果-->
+        <div class="water-ripple" style="display: none;">
+            <p></p>
+        </div>
+
+        <!--觉醒说明-->
+        <div class="awaken-tips-alert" style="display: none;">
+            <img src="picture/awaken-tips.png">
+            <div class="close">
+                <a href="javascript:;"><img src="picture/close.png"></a>
+            </div>
+        </div>
+        <!--觉醒图鉴-->
+        <div class="awaken-rules-alert" style="display: none;">
+            <img src="picture/tujian-alert.png">
+            <div class="close">
+                <a href="javascript:;"><img src="picture/close.png"></a>
+            </div>
+        </div>
+        <!--英雄属性升级效果-->
+        <div class="skill-promote">
+        </div>
+        <!--觉醒说明文字-->
+        <div class="skill-promote-tips">
+            <p>觉醒属性只能够装备两条</p>
+            <p>普通觉醒及成长觉醒各一条	</p>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script>
+    var heroid = GetQueryString("heroid");
+
+    function GetUserInfo(srv_id, st) {
+        UserST = { srv_id: srv_id, st: st };
+        myAwake.getAwakeInfo(heroid);
+
+    }
+    //初始数据
+    function setHeroList(data) {
+        data = eval('(' + data + ')');
+        myAwake.initData(data);
+        //获取玩家st
+        qfwebobject.callcpp('reqst');
+    }
+
+    var myAwake = {
+        //觉醒次数
+        jxNums: 0,
+        ptUseNums: 20, //普通觉醒消耗数量
+        curItemNums: [], //当前3个道具的数量
+        msg: "",
+        pid: 0,
+        //初始数据
+        initData: function (data) {
+            if (data.publicData.juexing.jxCountA) {
+                $.each(data.publicData.juexing.jxListA, function (i, item) {
+                    //11-20
+                    aAreaMap.eq(20 - item.index).data("item", item);
+                })
+            }
+            if (data.publicData.juexing.jxCountB) {
+                $.each(data.publicData.juexing.jxListB, function (i, item) {
+                    //1-10
+                    aAreaMap.eq(item.index - 1).data("item", item);
+                })
+            }
+        },
+
+        //获取觉醒信息
+        getAwakeInfo: function (heroId) {
+            $.post(urlroot + "/JueXing/GetUserJueXingInfo", { p1: UserST.srv_id, p2: UserST.st, p3: heroId }, function (data) {
+                if (data.Code >= 0) {
+                    myAwake.jxNums = 0;
+                    $.each(data.Obj, function (i, item) {
+                        var hudu = gethuduById(item.PID);
+                        jxlevel[hudu] = item.Level;
+                        for (var j = 1; j <= item.Level; j++) {
+                            myAwake.jxNums++;
+                            drawLine(hudu, j);
+                        }
+                    });
+
+                    //设置当前觉醒消耗碎片数量
+                    $(".usenum1").html(myAwake.getUseNums());
+
+                    //页面显示道具数量
+                    myAwake.curItemNums = data.Obj1;
+                    $(".itemnum1").html(myAwake.curItemNums[0]);
+                    $(".itemnum2").html(myAwake.curItemNums[1]);
+                    $(".itemnum3").html(myAwake.curItemNums[2]);
+                }
+            }, "json");
+        },
+
+
+        //获取当前普通觉醒消耗的碎片
+        getUseNums: function () {
+            var useNum = 0;
+            if (myAwake.jxNums <= 17) {
+                useNum = 20;
+            }
+            else if (myAwake.jxNums <= 51) {
+                useNum = 100;
+            }
+            else if (myAwake.jxNums <= 85) {
+                useNum = 200;
+            }
+            else if (myAwake.jxNums <= 136) {
+                useNum = 300;
+            }
+            else if (myAwake.jxNums <= 170) {
+                useNum = 500;
+            }
+
+            return useNum;
+        },
+
+        //普通觉醒
+        ptJueXing: function (heroId) {
+            var num = myAwake.getUseNums();
+            if (num > myAwake.curItemNums[0]) {
+                showAlert(false, "当前灵魂碎片不足");
+                return;
+            }
+
+            $("#btn1").off("click");
+            $.post(urlroot + "/JueXing/SetUserPTJueXingInfo", { p1: UserST.srv_id, p2: UserST.st, p3: heroId }, function (data) {
+                if (data.Code >= 0) {
+                    myAwake.curItemNums[0] -= myAwake.getUseNums();
+                    $(".itemnum1").html(myAwake.curItemNums[0]);
+
+                    myAwake.jxNums++;
+                    //设置当前觉醒消耗碎片数量
+                    $(".usenum1").html(myAwake.getUseNums());
+
+                    var hudu = gethuduById(parseInt(data.Obj));
+                    var str = "";
+                    if (jxlevel[hudu]) {
+                        jxlevel[hudu]++;
+                        str = "<p>" + getlevDesc(hudu, jxlevel[hudu]);
+                        str += "<br /> <span>↑</span> <br />" + getlevDesc(hudu, jxlevel[hudu] - 1) + "</p>";
+                    } else {
+                        jxlevel[hudu] = 1;
+                        str = "<p>" + getlevDesc(hudu, jxlevel[hudu]) + "</p>";
+                    }
+                    //刷新平台觉醒信息
+                    qfwebobject.callcpp('refreshjuexing', heroId + "," + data.Obj + "," + jxlevel[hudu]);
+                    myAwake.msg = str;
+                    waterRippleFn(hudu, jxlevel[hudu]);
+                } else {
+                    showAlert(false, data.Msg);
+                    $("#btn1").on("click", function () {
+                        myAwake.ptJueXing(heroid);
+                    })
+                }
+            }, "json");
+        },
+
+        //高级觉醒
+        gjJueXing: function (heroId, pid) {
+            //道具数量是否小于1
+            if (1 > (myAwake.curItemNums[1] + myAwake.curItemNums[2])) {
+                showAlert(false, "您的灵魂结晶和精粹不足");
+                return;
+            }
+            //等级>=7时，灵魂精粹是否够
+            var hudu = gethuduById(parseInt(pid));
+            if (jxlevel[hudu] && jxlevel[hudu] >= 7 && 1 > myAwake.curItemNums[2]) {
+                showAlert(false, "您的灵魂精粹不足");
+                return;
+            }
+
+            $("#btn2").off("click");
+            $.post(urlroot + "/JueXing/SetUserGJJueXingInfo", { p1: UserST.srv_id, p2: UserST.st, p3: heroId, p4: pid }, function (data) {
+                if (data.Code >= 0) {
+                    myAwake.jxNums++;
+                    //设置当前觉醒消耗碎片数量
+                    $(".usenum1").html(myAwake.getUseNums());
+
+                    var hudu = gethuduById(parseInt(data.Obj));
+                    var str = "";
+                    if (jxlevel[hudu]) {
+                        jxlevel[hudu]++;
+                        str = "<p>" + getlevDesc(hudu, jxlevel[hudu]);
+                        str += "<br /> <span>↑</span> <br />" + getlevDesc(hudu, jxlevel[hudu] - 1) + "</p>";
+                    } else {
+                        jxlevel[hudu] = 1;
+                        str = "<p>" + getlevDesc(hudu, jxlevel[hudu]) + "</p>";
+                    }
+
+                    //当前等级>7
+                    if (jxlevel[hudu] > 7) {
+                        myAwake.curItemNums[2] -= 1;
+                        $(".itemnum3").html(myAwake.curItemNums[2]);
+                    } else {
+                        //结晶数量大于0，消耗结晶，否则消耗精粹
+                        if (myAwake.curItemNums[1] > 0) {
+                            myAwake.curItemNums[1] -= 1;
+                            $(".itemnum2").html(myAwake.curItemNums[1]);
+                        } else {
+                            myAwake.curItemNums[2] -= 1;
+                            $(".itemnum3").html(myAwake.curItemNums[2]);
+                        }
+                    }
+
+                    //刷新平台觉醒信息
+                    qfwebobject.callcpp('refreshjuexing', heroId + "," + data.Obj + "," + jxlevel[hudu]);
+                    myAwake.msg = str;
+                    waterRippleFn(hudu, jxlevel[hudu]);
+                } else {
+                    showAlert(false, data.Msg);
+                    $("#btn2").on("click", function () {
+                        showLight();
+                        $(".mask").show();
+                    })
+                }
+            }, "json");
+        }
+
+
+    }
+
+    $(function () {
+        if (heroid) {
+            //获取数据
+            qfwebobject.callcpp('reqherolist');
+
+            $("#heropic").attr("src", GetPic_yingxiong(heroid, 3));
+
+
+        }
+    })
+
+    //普通按钮
+    $("#btn1").on("click", function () {
+        myAwake.ptJueXing(heroid);
+    })
+    //高级按钮
+    $("#btn2").on("click", function () {
+        showLight();
+        $(".mask").show();
+
+    })
+    //高级按钮 取消
+    $("#btn3").on("click", function () {
+        cancelbox();
+    })
+
+    //confirm确认按钮调用功能
+    function gjjx() {
+        cancelbox();
+        myAwake.gjJueXing(heroid, myAwake.pid);
+    }
+
+    var awarkBtnIcon = $(".iconlhsp");
+    awarkBtnIcon.hover(function () {
+        $(this).next(".icon-tips").show();
+    }, function () {
+        $(this).next(".icon-tips").hide();
+    })
+    var awarkBtnIcon2 = $(".awark-btn-icon .icon02");
+    awarkBtnIcon2.hover(function () {
+        $(".icon-tips02").show();
+    }, function () {
+        $(".icon-tips02").hide();
+    })
+    var awarkBtnIcon3 = $(".awark-btn-icon .icon03");
+    awarkBtnIcon3.hover(function () {
+        $(".icon-tips03").show();
+    }, function () {
+        $(".icon-tips03").hide();
+    })
+
+
+    //觉醒说明
+    $(".awaken-tips a").eq(0).click(function () {
+        $(".awaken-tips-alert,.mask1").show();
+    });
+    //关闭觉醒说明
+    $(".awaken-tips-alert .close").click(function () {
+        $(".awaken-tips-alert,.mask1").hide();
+    });
+
+    //觉醒图鉴
+    $(".awaken-tips a").eq(1).click(function () {
+        $(".awaken-rules-alert").show();
+    });
+    //关闭觉醒图鉴
+    $(".awaken-rules-alert .close").click(function () {
+        $(".awaken-rules-alert").hide();
+    });
+    //关闭兑换弹框
+    $(".alert-exchange-box .close,.alert-exchange-box .btn").click(function () {
+        //页面显示道具数量
+        $(".itemnum1").html(myAwake.curItemNums[0]);
+        $(".itemnum2").html(myAwake.curItemNums[1]);
+        $(".itemnum3").html(myAwake.curItemNums[2]);
+        $(".alert-exchange-box").hide();
+    });
+
+
+    function showAlert(isok, msg) {
+        if (isok) {
+            $(".skill-promote").html(msg);
+            showPromoteSkill();
+        } else {
+            $("#msg11").hide();
+            $("#msg1").html(msg);
+            $("#alertbox,.mask,.mask1").show();
+        }
+    }
+
+    function confirmBox(msg) {
+        $("#msg2").html(msg);
+        $("#confirbox,.mask,.mask1").show();
+
+    }
+    function cancelbox() {
+        closeBox();
+        $("#Map area").off('mouseenter').off('mouseleave').off("click");
+        bindHover();
+        $(".awark-btn02").eq(0).show();
+        $(".awark-btn02").eq(1).hide();
+    }
+
+    function closeBox() {
+        $(".alert_box,.mask,.mask1").hide();
+    }
+
+</script>
+
+<script type="text/javascript">
+    var jxlevel = [];
+    for (var i = 0; i < 20; i++) { jxlevel[i] = 0; }
+
+
+    //根据id获取弧度
+    function gethuduById(pid) {
+        var hudu;
+        switch (pid) {
+            case 101:
+                hudu = 19;
+                break;
+            case 102:
+                hudu = 18;
+                break;
+            case 103:
+                hudu = 17;
+                break;
+            case 104:
+                hudu = 16;
+                break;
+            case 105:
+                hudu = 15;
+                break;
+            case 106:
+                hudu = 14;
+                break;
+            case 107:
+                hudu = 13;
+                break;
+            case 108:
+                hudu = 12;
+                break;
+            case 109:
+                hudu = 11;
+                break;
+            case 110:
+                hudu = 10;
+                break;
+            case 201:
+                hudu = 0;
+                break;
+            case 202:
+                hudu = 1;
+                break;
+            case 203:
+                hudu = 2;
+                break;
+            case 204:
+                hudu = 3;
+                break;
+            case 205:
+                hudu = 4;
+                break;
+            case 206:
+                hudu = 5;
+                break;
+            case 207:
+                hudu = 6;
+                break;
+            case 208:
+                hudu = 7;
+                break;
+            case 209:
+                hudu = 8;
+                break;
+            case 210:
+                hudu = 9;
+                break;
+
+        }
+
+        return hudu;
+    }
+
+
+
+    //一个完整的圆的弧度是2π，角度360度
+    var cv = document.getElementById("canvas");
+    var ctx = cv.getContext("2d");
+    ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+    var cvLine = document.getElementById("canvasLine");
+    var ctxLine = cvLine.getContext("2d");
+    ctxLine.fillStyle = 'rgba(255, 255, 255, 0)';
+    cv.width = 629;
+    cv.height = 629;
+    cvLine.width = 629;
+    cvLine.height = 629;
+    var circleR = 0;
+    // 角度转弧度
+    function toRadian(angle) {
+        return angle / 180 * Math.PI;
+    }
+
+    function drawCircle(obj, circleR, startDeg, endDeg, icolor) {
+        obj.beginPath();
+        obj.lineWidth = 3;
+        obj.strokeStyle = icolor;
+        obj.arc(308, 308, circleR, startDeg, endDeg);
+        obj.stroke();
+        obj.closePath();
+    }
+
+
+    var outerR = 306, innerR = 180;
+    for (var i = 0; i <= 9; i++) {
+        if (i <= 6) {
+            drawCircle(ctx, outerR, 0, 360, "#2e0309");
+            outerR -= 7;
+        } else {
+            drawCircle(ctx, innerR, 0, 360, "#4f3e2a");
+            innerR -= 7;
+        }
+
+    }
+
+    var aWhiteZi = $(".lightZ a");
+    var radiusList = ["306", "299", "292", "285", "278", "271", "264", "180", "173", "167"];  //半径
+    //banjing 1-10  hudu 0-19
+    function drawLine(hudu, banjing) {
+        aWhiteZi.eq(hudu).css("visibility", "visible");
+        if (banjing == 10) {
+            aWhiteZi.eq(hudu).addClass("top-level");
+        }
+        drawCircle(ctxLine, radiusList[banjing - 1], toRadian((hudu - 5) * 18), toRadian((hudu - 4) * 18), "#ddd7c4");
+    }
+
+    var aAreaMap = $("#Map area");
+    var aChar = $(".changeBg a");
+    var skillTip = $(".skill-tips");
+    function bindHover() {
+        aAreaMap.hover(function (ev) {
+            var index = $(this).index();
+            var str = "";
+            if (index >= 9 && index <= 11) {
+                str = "<p><span>敬请期待！</span></p>";
+            } else {
+                var item = $(this).data("item");
+                //该觉醒弧度的等级
+                switch (jxlevel[index]) {
+                    case 0:
+                        str = '<p><span>下一级：</span>lv1 ' + item.lv1 + '</p>';
+                        break;
+                    case 1:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv1 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv2 + '</p>';
+                        break;
+                    case 2:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv2 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv3 + '</p>';
+                        break;
+                    case 3:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv3 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv4 + '</p>';
+                        break;
+                    case 4:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv4 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv5 + '</p>';
+                        break;
+                    case 5:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv5 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv6 + '</p>';
+                        break;
+                    case 6:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv6 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv7 + '</p>';
+                        break;
+                    case 7:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv7 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv8 + '</p>';
+                        break;
+                    case 8:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv8 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv9 + '</p>';
+                        break;
+                    case 9:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv9 + ' </p><p><span>下一级：</span>lv' + (jxlevel[index] + 1) + ' ' + item.lv10 + '</p>';
+                        break;
+                    case 10:
+                        str = '<p><span>当前等级：</span>lv' + jxlevel[index] + ' ' + item.lv10 + ' </p>';
+                        break;
+                    default:
+                        str = "";
+                        break;
+                }
+                var str1 = ""
+                if (index >= 10) {
+                    str1 = "固定觉醒";
+                } else {
+                    str1 = "成长觉醒";
+                    str += '<p><span>注：</span>成长觉醒共计成长三次，在英雄等级6/11/16级时可进行成长</p>';
+                }
+                str = '<p><span>' + str1 + '：</span>' + item.lv1.substring(0, item.lv1.indexOf("+")) + '</p>' + str;
+            }
+
+
+            skillTip.html(str);
+            skillTip.show();
+            var iPageX = aWhiteZi.eq(index).offset().left,
+                iPageY = aWhiteZi.eq(index).offset().top;
+            skillTip.css({ "top": iPageY + 10, "left": iPageX + 80 });
+        }, function (ev) {
+            skillTip.hide();
+        })
+    }
+    bindHover();
+    //获取弧度下等级的描述
+    function getlevDesc(hudu, level) {
+        var str = "";
+        var item = aAreaMap.eq(hudu).data("item");
+        //该觉醒弧度的等级
+        switch (level) {
+            case 1:
+                str = 'lv' + level + ' ' + item.lv1;
+                break;
+            case 2:
+                str = 'lv' + level + ' ' + item.lv2;
+                break;
+            case 3:
+                str = 'lv' + level + ' ' + item.lv3;
+                break;
+            case 4:
+                str = 'lv' + level + ' ' + item.lv4;
+                break;
+            case 5:
+                str = 'lv' + level + ' ' + item.lv5;
+                break;
+            case 6:
+                str = 'lv' + level + ' ' + item.lv6;
+                break;
+            case 7:
+                str = 'lv' + level + ' ' + item.lv7;
+                break;
+            case 8:
+                str = 'lv' + level + ' ' + item.lv8;
+                break;
+            case 9:
+                str = 'lv' + level + ' ' + item.lv9;
+                break;
+            case 10:
+                str = 'lv' + level + ' ' + item.lv10;
+                break;
+            default:
+                str = '';
+                break;
+        }
+
+        return str;
+    }
+
+    //显示圆圈的亮色和点击事件
+    function showLight() {
+        $(".mask").show();
+        $(".awark-btn02").eq(1).show();
+        $(".awark-btn02").eq(0).hide();
+
+        aAreaMap.on("mouseenter", function () {
+            var i = $(this).index();
+            if (i >= 9 && i <= 11) { return; }
+            aChar.eq(i).addClass("on");
+        })
+
+        aAreaMap.on("mouseleave", function () {
+            var i = $(this).index();
+            if (i >= 9 && i <= 11) { return; }
+            aChar.eq(i).removeClass("on");
+        })
+
+        aAreaMap.on("click", function () {
+            var i = $(this).index();
+            if (i >= 9 && i <= 11) { return; }
+            skillTip.hide();
+            aChar.eq(i).removeClass("on");
+            var item = $(this).data("item");
+            myAwake.pid = item.Id;
+            $(".mask").hide();
+
+            $("#Map area").off('mouseenter').off('mouseleave').off("click");
+            bindHover();
+            var lev = jxlevel[i] + 1;
+            if (lev > 10) {
+                $(".awark-btn02").eq(0).show();
+                $(".awark-btn02").eq(1).hide();
+
+                showAlert(false, "当前属性已满级");
+                return;
+            }
+            var str = getlevDesc(i, lev);
+            confirmBox("确定觉醒 " + str + " 吗？");
+        })
+    }
+
+    var skillPromote = $(".skill-promote"),
+        iTop = skillPromote.css("top"),
+        iOpacity = skillPromote.css("opacity");
+    function showPromoteSkill() {
+        skillPromote.show().addClass("mymove");
+        setTimeout(function () {
+            skillPromote.css({ "top": iTop, "opacity": iOpacity }).hide();
+        }, 2000)
+    }
+
+    var whiteLight = $('<img class="mywhite_light" src="picture/animate.gif"/>');
+    var waterRipple = $(".water-ripple")
+    waterRippleP = waterRipple.find("p"),
+        waterRippleIndex = 0;
+    function waterRippleFn(hudu, banjing) {
+        $("#btn1").off("click");
+        $("#btn2").off("click");
+        waterRipple.show();
+        var timer = setInterval(function () {
+            waterRippleP.removeClass();
+            waterRippleP.addClass("waterP" + waterRippleIndex);
+            if (waterRippleIndex > 20) {
+                waterRippleIndex = 0;
+                clearInterval(timer);
+                waterRipple.hide();
+                drawLine(hudu, banjing);
+
+                aWhiteZi.eq(hudu).append(whiteLight);
+                setTimeout(function () {
+                    $(".mywhite_light").remove();
+                }, 1200)
+
+                showAlert(true, myAwake.msg);
+                $("#btn1").on("click", function () {
+                    myAwake.ptJueXing(heroid);
+                })
+                $("#btn2").on("click", function () {
+                    showLight();
+
+                })
+            } else {
+                waterRippleIndex++;
+            }
+        }, 100)
+
+    }
+
+    var iconLists = $(".icon-box .icon-list");
+    iconLists.hover(function () {
+        $(this).find(".icon-tips").show();
+    }, function () {
+        $(this).find(".icon-tips").hide();
+    })
+
+
+</script>
