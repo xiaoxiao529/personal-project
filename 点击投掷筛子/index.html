@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>大富翁</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		
+		<div class="zillionaire-wrap">
+			<div class="page-top clearfix">
+	            <div class="fl nums">骰子： <span class="sz-num">0</span></div>
+	            <div class="fl nums">机会卡： <span class="jhk-num">0</span></div>
+	            <a href="javascript:void(0);" class="sp-dh-btn"></a>
+	        </div>
+	        
+	        <div class="zillionaire">
+	        	
+	        	<dl class="clear">
+	        		<dt class="fl left-panel">
+	        			<ul class="clear" id="lottery">
+	        				<li class="item01 active">
+	        					<a href="javascript:;">
+	        						<img src="img/gift01.png"/>
+	        						<span></span>
+	        					</a>
+	        				</li>
+	        				<li class="item02">
+	        					<a href="javascript:;">
+	        						<img src="img/gift02.png"/>
+	        						<span>灵魂碎片×2</span>
+	        					</a>
+	        				</li>
+	        				<li class="item03">
+	        					<a href="javascript:;">
+	        						<img src="img/gift03.png"/>
+	        						<span>达人虎符×10</span>
+	        					</a>
+	        				</li>
+	        				<li class="item04">
+	        					<a href="javascript:;">
+	        						<img src="img/gift04.png"/>
+	        						<span>灵魂碎片×50</span>
+	        					</a>
+	        				</li>
+	        				<li class="item05">
+	        					<a href="javascript:;">
+	        						<img src="img/gift05.png"/>
+	        						<span>灵魂碎片×5</span>
+	        					</a>
+	        				</li>
+	        				<li class="item06">
+	        					<a href="javascript:;">
+	        						<img src="img/gift06.png"/>
+	        						<span>星钻×2</span>
+	        					</a>
+	        				</li>
+	        				<li class="item07">
+	        					<a href="javascript:;">
+	        						<img src="img/gift07.png"/>
+	        					</a>
+	        				</li>
+	        				<li class="item08">
+	        					<a href="javascript:;">
+	        						<img src="img/gift08.png"/>
+	        						<span>灵魂碎片×2</span>
+	        					</a>
+	        				</li>
+	        				<li class="item09">
+	        					<a href="javascript:;">
+	        						<img src="img/gift09.png"/>
+	        						<span>永久虎符×10</span>
+	        					</a>
+	        				</li>
+	        				<li class="item10">
+	        					<a href="javascript:;">
+	        						<img src="img/gift10.png"/>
+	        					</a>
+	        				</li>
+	        				
+	        				<li class="item11">
+	        					<a href="javascript:;">
+	        						<img src="img/gift11.png"/>
+	        						<span>灵魂碎片×5</span>
+	        					</a>
+	        				</li>
+	        				<li class="item12">
+	        					<a href="javascript:;">
+	        						<img src="img/gift12.png"/>
+	        						<span>夺宝券×1</span>
+	        					</a>
+	        				</li>
+	        				<li class="item13">
+	        					<a href="javascript:;">
+	        						<img src="img/gift13.png"/>
+	        						<span>灵魂结晶×1</span>
+	        					</a>
+	        				</li>
+	        				<li class="item14">
+	        					<a href="javascript:;">
+	        						<img src="img/gift14.png"/>
+	        						<span>灵魂碎片×2</span>
+	        					</a>
+	        				</li>
+	        				<li class="item15">
+	        					<a href="javascript:;">
+	        						<img src="img/gift15.png"/>
+	        						<span>达人虎符×10</span>
+	        					</a>
+	        				</li>
+	        				<li class="item16">
+	        					<a href="javascript:;">
+	        						<img src="img/gift16.png"/>
+	        					</a>
+	        				</li>
+	        				<li class="item17">
+	        					<a href="javascript:;">
+	        						<img src="img/gift17.png"/>
+	        						<span>灵魂碎片×5</span>
+	        					</a>
+	        				</li>
+	        				<li class="item18">
+	        					<a href="javascript:;">
+	        						<img src="img/gift18.png"/>
+	        						<span>星钻×5</span>
+	        					</a>
+	        				</li>
+	        				
+	        			</ul>
+	        		</dt>
+	        		<dd class="fl right-ways">
+	        			<div class="sz-ways">
+	        				<table border="" cellspacing="" cellpadding="">
+		        				<tr>
+		        					<th>获得条件</th>
+		        					<th>奖励</th>
+		        					<th>领奖</th>
+		        				</tr>
+		        				<tr>
+		        					<td>每日签到</td>
+		        					<td>骰子×1</td>
+		        					<td>
+		        						<a href="javascript:;" class="status01">领取</a>
+		        					</td>
+		        				</tr>
+		        				<tr>
+		        					<td>完成2局群雄逐鹿对战<br />（0/2）</td>
+		        					<td>骰子×2</td>
+		        					<td>
+		        						<a href="javascript:;" class="status02">已领奖</a>
+		        					</td>
+		        				</tr>
+		        				<tr>
+		        					<td>消耗10个扭蛋币<br />（0/10）</td>
+		        					<td>骰子×3</td>
+		        					<td>
+		        						<a href="javascript:;"  class="status03">已领奖</a>
+		        					</td>
+		        				</tr>
+		        			</table>
+	        			</div>
+	        			
+	        			<div class="jhk-ways">
+	        				<p>机会卡:在大富翁使用机会卡后,可直接前往<b>“机会”</b></p>
+	        				<p>获得方法:每消耗扭蛋币40枚,可领取<br /><b>机会卡*1</b></p>
+	        			</div>
+	        			
+	        			<div class="lqu-info">
+	        				<p>累计消耗扭蛋币：<b>500</b> <a href="javascript:;" class="status01">领取</a></p>
+	        				<p>可领取机会卡：<b>10</b> <a href="javascript:;" class="status02">领取</a></p>
+	        				<p>已领取机会卡：<b>0</b></p>
+	        			</div>
+	        			
+	        		</dd>
+	        	</dl>
+	        	
+	        	<!--按钮-->
+	        	<div class="btn-group">
+	        		<ul class="clear">
+	        			<li class="li-sz"><img id="sz-pic" src="img/sz.png"/> <b>x1</b> </li>
+	        			<li class="li-jhk"> <b>x2</b> </li>
+	        		</ul>
+	        		<p><a href="javascript:;" class="startBtn"><img src="img/btn01.png"/></a></p>
+	        		<p><a href="javascript:;" class="chanceBtn"><img src="img/btn02.png"/></a></p>
+	        	</div>
+	        	
+	        	<div class="mask"></div>
+	        	
+	        	<!--弹框-->
+	        	<div class="alert" style="display: none;">
+				    <a href="javascript:;" class="close"></a>
+				    <div class="light">
+				    	<h3>掷得点数<span id="dianshu"></span></h3>
+				    	<h2>恭喜你，获得</h2>
+				        <div class="jl-con">
+				        	
+				        </div>
+				        <div class="jx-alert-btn">
+					    	<a href="javascript:;" class="jx-sure-btn"></a>
+					    </div>
+				    </div>
+				    
+				</div>
+				
+				<!--活动规则-->
+		        <div class="rules-alert" style="">
+			        <a href="javascript:void(0);" class="close"></a>
+			        <p class="rules-tt">规则说明</p>
+			        <div class="rules-con">
+			            <p>1.活动时间为2019年1月24日00:00:00—2019年2月21日23:59:59</p>
+			            <p>2.每次掷骰子，小人会随机前进1-6步，并获得停留格子中显示的奖励。</p>
+			            <p>前进至“命运”，有机会获得额外的骰子。前往至“机会”，有机会获得大量“灵魂碎片”。</p>
+			            <p>3.在新春扭蛋机每累计消耗扭蛋机40枚，可免费领取一张机会卡。使用机会卡，可直接前往“机会”。</p>
+			            <p>4.骰子和机会卡在活动结束后会自动过期，请尽快合理使用。</p>
+			            <p>5.每日签到时间为0:00:00-23:59:59。达人虎符每天6:00清空，请合理安排时间领取签到奖励。</p>
+			            <p>6.每日获得筛子途径“完成2局对战”、“充值50元”即为福利大厅每日相关任务。骰子奖励不可重复获得。</p>
+			        </div>
+			        <a href="javascript:void(0);" class="sure-btn"></a>
+			    </div>
+	        	
+	        </div>
+	        
+		</div>
+		
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				var lottery = {
+					
+					index:1,  //当前在哪个位置
+					count:18,  //总共多少个位置
+					timer:null,  //定时器
+					chanceTimer:null,
+					speed:200,  //转动速度
+					randomNum:0,  //筛子转动的随机点数
+					roll:function(){  //转动效果
+						var lottery = $("#lottery");
+						this.items = lottery.find("li");
+						var index = this.index;
+						var count = this.count;
+						this.items.eq(index-1).removeClass("active");
+						if(index>=count){
+							index = 0;
+						}
+						index++;
+						this.items.eq(index-1).addClass("active");
+						this.index = index;
+						
+					},
+					lotteryRoll:function(){
+						chanceBtn.off("click");
+						var randomNum = Math.floor(Math.random()*6+1);
+						$(".alert h3").show();
+						$("#dianshu").html(randomNum);
+						console.log(randomNum);
+						var that = this;
+						this.timer = setInterval(function(){
+							lottery.roll();
+							randomNum--;
+							if(randomNum==0){
+								clearInterval(lottery.timer)
+								startBtn.on("click",getSz);
+								chanceBtn.on("click",getChance);
+								$("#sz-pic").removeClass("rotate");
+								var jlHtml = that.items.eq(that.index-1).find("span").html();								
+								$(".alert").show().find(".jl-con").empty().append(jlHtml);
+								$(".mask").show();
+							}
+						},lottery.speed)
+					},
+					chanceRoll:function(){
+						startBtn.off("click");
+						var randomNum=18;
+						lottery.index=15;
+						$(".alert h3").hide();
+						this.chanceTimer = setInterval(function(){
+							lottery.roll();
+							randomNum--;
+							console.log(randomNum)
+							if(randomNum<0){
+								clearInterval(lottery.chanceTimer)
+								startBtn.on("click",getSz);
+								chanceBtn.on("click",getChance);
+								$("#sz-pic").removeClass("rotate");
+								$(".alert").show().find(".jl-con").empty().append("机会卡");
+								$(".mask").show();
+							}
+						},lottery.speed)
+					}
+				}
+
+				var startBtn = $(".startBtn");
+				var chanceBtn = $(".chanceBtn");
+
+				function getSz(){
+					lottery.lotteryRoll();
+					startBtn.off("click");
+					chanceBtn.off("click");
+					$("#sz-pic").addClass("rotate")
+				}
+				function getChance(){
+					lottery.chanceRoll();
+					startBtn.off("click");
+					chanceBtn.off("click");
+				}
+				startBtn.on("click",getSz);
+				chanceBtn.on("click",getChance);
+
+				$('.close').click(function(){
+					$(this).parent().hide();
+					$(".mask").hide();
+				})
+				$('.jx-sure-btn').click(function(){
+					$(".alert").hide();
+					$(".mask").hide();
+				})
+				
+				$('.sure-btn').click(function(){
+					$(".rules-alert").hide();
+					$(".mask").hide();
+				})
+				$('.sp-dh-btn').click(function(){
+					$(".rules-alert").show();
+					$(".mask").show();
+				})	
+				
+			})
+		</script>
+	</body>
+</html>
