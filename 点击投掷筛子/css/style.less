@@ -171,6 +171,12 @@ a{
         margin: 0 10px 0 18px;
         background:url(../img/left-panel-bg.png) no-repeat ;
         position: relative;
+        .hero{
+            position: absolute;
+            left: 0;
+            top: -20px;
+            z-index: 20;
+        }
         ul{
             li{
                 width: 76px;
@@ -188,6 +194,17 @@ a{
                     background: url(../img/bg-light.png) no-repeat;
                     background-size: cover;
                 }
+                &.active:after{
+                    content: url(../img/hero.png);
+                    position: absolute;
+                    left: -10px;
+                    top: -32px;
+                    z-index: 10;
+                }
+            }
+            .item01.active:after,.item07.active:after,.item10.active:after,.item16.active:after{
+                left: 28px;
+                top:16px;
             }
             .item01{
                 width: 154px;
@@ -313,6 +330,7 @@ a{
             .item17{
                 left: 17px;
                 top: 248px;
+                z-index: 2;
                 img{
                     padding-top:6px;
                 }
@@ -530,6 +548,14 @@ a{
         background-position: 0 -28px;
     }
 }
+
+.deco{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    z-index: 20;
+}
+
 .rules-alert{
     z-index: 102;
     display: none;
@@ -573,48 +599,102 @@ a{
     background: url(../img/jx-sure-btn.png) 0 0 no-repeat;
     bottom: 27px;
 }
-.rotate{
+.rotate1{
     transition: all 1s;
-    animation:iRotate  0.5s  alternate;
+    animation:iRotate1  0.5s  alternate;
     animation-fill-mode: forwards;
     -webkit-transition: all 1s;
-    -webkit-animation:iRotate  0.5s  alternate;
+    -webkit-animation:iRotate1  0.5s  alternate;
     -webkit-animation-fill-mode: forwards;
+}
+.rotate2{
+    transition: all 1s;
+    animation:iRotate2  0.5s  alternate;
+    animation-fill-mode: both;
+    -webkit-transition: all 1s;
+    -webkit-animation:iRotate2  0.5s  alternate;
+    -webkit-animation-fill-mode: both;
 }
 .rotate3{
     transition: all 1s;
     animation:iRotate3  0.5s  alternate;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     -webkit-transition: all 1s;
     -webkit-animation:iRotate3  0.5s  alternate;
-    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: both;
+}
+.rotate4{
+    transition: all 1s;
+    animation:iRotate4  0.5s  alternate;
+    animation-fill-mode: both;
+    -webkit-transition: all 1s;
+    -webkit-animation:iRotate4  0.5s  alternate;
+    -webkit-animation-fill-mode: both;
+}
+.rotate5{
+    transition: all 1s;
+    animation:iRotate5  0.5s  alternate;
+    animation-fill-mode: both;
+    -webkit-transition: all 1s;
+    -webkit-animation:iRotate5  0.5s  alternate;
+    -webkit-animation-fill-mode: both;
 }
 .rotate6{
     transition: all 1s;
     animation:iRotate6  0.5s  alternate;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     -webkit-transition: all 1s;
     -webkit-animation:iRotate6  0.5s  alternate;
-    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: both;
 }
-@keyframes iRotate{
+@keyframes iRotate1{
     0%{
         transform: rotateZ(0deg);
         -webkit-transform: rotateZ(0deg);
     }
     100%{
-        transform: rotateZ(720deg);
-        -webkit-transform: rotateZ(720deg);
+        transform: rotateZ(950deg);
+        -webkit-transform: rotateZ(950deg);
+    }
+}
+@keyframes iRotate2{
+    0%{
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(820deg);
+        -webkit-transform: rotateZ(820deg);
     }
 }
 @keyframes iRotate3{
     0%{
         transform: rotateZ(0deg);
-        -webkit-transform: rotateZ(960deg);
+        -webkit-transform: rotateZ(0deg);
     }
     100%{
-        transform: rotateZ(960deg);  
-        -webkit-transform: rotateZ(960deg);  
+        transform: rotateZ(950deg);
+        -webkit-transform: rotateZ(950deg);
+    }
+}
+@keyframes iRotate4{
+    0%{
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(820deg);
+        -webkit-transform: rotateZ(820deg);
+    }
+}
+@keyframes iRotate5{
+    0%{
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(720deg); 
+        -webkit-transform: rotateZ(720deg); 
     }
 }
 @keyframes iRotate6{
@@ -623,7 +703,7 @@ a{
         -webkit-transform: rotateZ(0deg);
     }
     100%{
-        transform: rotateZ(705deg); 
-        -webkit-transform: rotateZ(705deg); 
+        transform: rotateZ(720deg); 
+        -webkit-transform: rotateZ(720deg); 
     }
 }
